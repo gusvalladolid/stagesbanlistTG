@@ -1,10 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import StageButton from './components/stageButton';
+import {} from './'
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Thrust Gaming matenmeee</Text>
+      <StageButton imagePath={require("./assets/stagesImage/battlefield.png")}/>
+      <StageButton imagePath={require("./assets/stagesImage/finalDestination.png")}/>
+      <StageButton imagePath={require("./assets/stagesImage/hollowBastion.png")}/>
+      <StageButton imagePath={require("./assets/stagesImage/kalos.png")}/>
+      <StageButton imagePath={require("./assets/stagesImage/pokemonStadium.png")}/>
       <StatusBar style="auto" />
     </View>
   );
