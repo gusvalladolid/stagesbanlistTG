@@ -1,27 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import StageButton from './components/stageButton';
-import {} from './'
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './screens/homeScreen';
+import BanListScreen from './screens/banListScreen';
 
-export default function App() {
+const Stack = createStackNavigator();
+
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Thrust Gaming matenmeee</Text>
-      <StageButton imagePath={require("./assets/stagesImage/battlefield.png")}/>
-      <StageButton imagePath={require("./assets/stagesImage/finalDestination.png")}/>
-      <StageButton imagePath={require("./assets/stagesImage/hollowBastion.png")}/>
-      <StageButton imagePath={require("./assets/stagesImage/kalos.png")}/>
-      <StageButton imagePath={require("./assets/stagesImage/pokemonStadium.png")}/>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      {/* Use the Stack.Navigator for navigation */}
+      <Stack.Navigator screenOptions={{ headerShown: false}}>
+        {/* Define screens */}
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="BanListScreen" component={BanListScreen} options={{ title: 'Second Page' }} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
